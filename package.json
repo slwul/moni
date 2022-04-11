@@ -1,7 +1,59 @@
 {
-  "name": "integration-webapp",
+  "name": "react-resilient-architecture",
+  "description": "Ongoing resilient Frontend architecture is meant to help you build production-grade projects using the ReactJS framework.",
+  "keywords": [
+    "ReactJs boilerplate",
+    "Frontend Architecture"
+  ],
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "engines": {
+    "node": "14 || 15 || 16",
+    "npm": ">=6"
+  },
+  "author": {
+    "name": "Lucky Dewa Satria",
+    "email": "luckydewa123@gmail.com",
+    "url": "https://www.linkedin.com/in/lucky-dewa-satria/"
+  },
+  "bugs": {
+    "email": "luckydewa123@gmail.com",
+    "url": "https://github.com/lucky401/react-resilient-architecture/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucky401/react-resilient-architecture.git"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build --profile",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "npx prettier --write -c ./src && npx eslint './src' --quiet --fix",
+    "build:dev": "REACT_APP_STAGE=development react-scripts build --profile",
+    "security:audit": "npm audit",
+    "packages:upgrade": "npm upgrade --latest",
+    "setup": "node setup"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "node ./scripts/pre-commit",
+      "pre-push": "node ./scripts/pre-push"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
@@ -16,28 +68,19 @@
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "husky": "4.3.8",
+    "prettier": "2.6.2"
   }
 }
