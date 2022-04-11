@@ -31,7 +31,6 @@ function App(): JSX.Element {
       navigate('/login');
     }
   }, [location, navigate]);
-
   return (
     <Suspense fallback={<FullPageSpinner />}>
       <LoginModules />
