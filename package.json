@@ -1,9 +1,11 @@
 {
-  "name": "react-resilient-architecture",
-  "description": "Ongoing resilient Frontend architecture is meant to help you build production-grade projects using the ReactJS framework.",
+  "name": "moni",
+  "description": "Kedepan, Kepala Daerah dapat memantau seluruh kegiatan kedaerahan terutama sirkulasi dan daur ulang sampah dari mulai perencanaan, operasional hingga analisa dan evaluasi di satu ruangan yang terintegrasi.",
   "keywords": [
     "ReactJs boilerplate",
-    "Frontend Architecture"
+    "Frontend Architecture",
+    "Sampah",
+    "goverment"
   ],
   "version": "0.1.0",
   "private": false,
@@ -18,11 +20,11 @@
   },
   "bugs": {
     "email": "luckydewa123@gmail.com",
-    "url": "https://github.com/lucky401/react-resilient-architecture/issues"
+    "url": "https://github.com/lucky401/moni/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lucky401/react-resilient-architecture.git"
+    "url": "git+https://github.com/lucky401/moni.git"
   },
   "scripts": {
     "start": "react-scripts start",
