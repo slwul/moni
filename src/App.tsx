@@ -1,39 +1,34 @@
 import {Suspense, lazy, useEffect} from 'react';
-import shallow from 'zustand/shallow';
-import {useLocation, useNavigate} from 'react-router-dom';
+import {
+  useLocation,
+  useNavigate,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
-import {FullPageSpinner} from './common/components/full-page-spinner';
+import {FullPageSpinner} from 'common/components';
 
-import {useAuth} from './lib/auth-provider/context';
-
-const LoginModules = lazy(() => import('./modules/login'));
-
-function SecretPage({children}: {children: JSX.Element}): JSX.Element {
-  const navigate = useNavigate();
-  const [getAuth] = useAuth(state => [state.getAuth], shallow);
-
-  useEffect(() => {
-    const currentUser = getAuth();
-    if (!currentUser.token) {
-      navigate('/login');
-    }
-  }, [getAuth, navigate]);
-
-  return children;
-}
+const LoginModule = lazy(() => import('./modules/login'));
+const FullPageError = lazy(() => import('common/components/full-page-error'));
 
 function App(): JSX.Element {
   const location = useLocation();
   const navigate = useNavigate();
-
   useEffect(() => {
     if (location.pathname === '/') {
-      navigate('/login');
+      navigate('/menu');
     }
   }, [location, navigate]);
+
   return (
     <Suspense fallback={<FullPageSpinner />}>
-      <LoginModules />
+      <Routes>
+        <Route path="/login/*" element={<LoginModule />} />
+        <Route
+          path="*"
+          element={<FullPageError message="Page not found" errorCode={404} />}
+        />
+      </Routes>
     </Suspense>
   );
 }

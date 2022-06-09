@@ -2,28 +2,26 @@ import {useEffect} from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import shallow from 'zustand/shallow';
 
-import {useAuth} from '../../lib/auth-provider/context';
-// import { useAuth } from '@/lib/auth-provider/context';
+import {useAuth} from 'lib/auth-provider/context';
 
-import Layout from '../../layouts/general';
+import Layout from 'layouts/general';
 
-import {Login} from './views/login';
+import Login from './views/login';
 
 function Modules(): JSX.Element {
   const navigate = useNavigate();
-  const [getAuth] = useAuth(state => [state.getAuth], shallow);
+  const [isAuth] = useAuth(state => [state.isAuth], shallow);
 
   useEffect(() => {
-    const currentUser = getAuth();
-    if (currentUser.token) {
+    if (isAuth) {
       navigate('/');
     }
-  }, [getAuth, navigate]);
+  }, [isAuth, navigate]);
 
   return (
     <Layout>
       <Routes>
-        <Route path="login" element={<Login />} />
+        <Route path="/" element={<Login />} />
       </Routes>
     </Layout>
   );
