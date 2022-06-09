@@ -17,7 +17,7 @@ Spinner.defaultProps = {
   'aria-label': 'loading',
 };
 
-export function FullPageSpinner(): JSX.Element {
+function FullPageSpinner(): JSX.Element {
   return (
     <Box
       fontSize="4em"
@@ -31,3 +31,5 @@ export function FullPageSpinner(): JSX.Element {
     </Box>
   );
 }
+
+export default FullPageSpinner;

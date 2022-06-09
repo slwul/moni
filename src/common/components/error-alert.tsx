@@ -1,0 +1,40 @@
+import { MdWarningAmber } from 'react-icons/md'
+import { Icon ,Button, Text, VStack} from '@chakra-ui/react'
+
+
+function ErrorAlert({
+  message,
+  onRetry,
+  ...props
+}: {
+  message: string;
+  onRetry?: () => void;
+  [key: string]: any;
+}): JSX.Element {
+  return (
+    <VStack
+      gap={4}
+      flexGrow={1}
+      py={12}
+      align="center"
+      justify="center"
+      {...props}
+    >
+      <Icon as={MdWarningAmber} w={8} h={8} color="red.500" />
+      <Text fontSize="sm" lineHeight={5} color="gray.500" my={2}>
+        {message}
+      </Text>
+      <Button
+        size="sm"
+        colorScheme="blue"
+        w="208px"
+        variant="solid"
+        onClick={onRetry}
+      >
+        Retry
+      </Button>
+    </VStack>
+  );
+}
+
+export default ErrorAlert;
