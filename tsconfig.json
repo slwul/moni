@@ -1,12 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@/common/*": ["./common/*"],
-      "@/layouts/*": ["./layouts/*"],
-      "@/modules/*": ["./modules/*"],
-      "@/lib/*": ["./lib/*"]
-    },
+    "baseUrl": "src",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveConstEnums": true,
