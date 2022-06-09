@@ -1,46 +1,109 @@
-# Getting Started with Create React App
+# Moni 🖥
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Monitoring Satuan Tugas Kebersihan Dalam Menjaga kebersihan Kota Sleman
 
-## Available Scripts
+- Monitoring dan Visualisasi situasi secara nyata melalui Geotaging
+- Percepatan komunikasi, koordinasi dan memutakhirkan budaya hirarkis agar mampu menjadi dinamis
+- Dapat menjadi prototype dan mengembangkan budaya digital
 
-In the project directory, you can run:
+## Live Demo
 
-### `npm start`
+You can see the running example here [the deployment of the app on Vercel](https://moni.vercel.app).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Dashboard Analytics dan Visualisasi
+- Monitoring dan Visualisasi situasi secara nyata melalui Geotaging
+- Manajemen satgas dan bank sampah secara terpusat
+## Tech
 
-### `npm test`
+Moni uses a number of open source projects to work properly:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [React] - A JavaScript library for building user interfaces
+- [developer.spotify.com] - Build experiences for millions of music lovers with playback, personalization, and much, much more.
+- [Axios] -  a simple promise based HTTP client for the browser and node.js.
+- [Chakra UI] -  a simple, modular and accessible component library
 
-### `npm run build`
+## System Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [git][git] v2.13 or greater
+- [NodeJS][node] `14 || 15 || 16`
+- [npm][npm] v6 or greater
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+All of these must be available in your `PATH`. To verify things are set up properly, you can run this:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+git --version
+node --version
+npm --version
+```
 
-### `npm run eject`
+If you have trouble with any of these, learn more about the PATH environment variable and how to fix it here for [windows][win-path] or [mac/linux][mac-path].
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After you've made sure to have the correct things (and versions) installed, you should be able to just run a few commands to get set up:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+git clone https://github.com/lucky401/moni.git
+cd moni
+npm run setup
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This may take a few minutes. If you get any errors, please read through them and see if you can find out what the problem is. If you can't work it out on your own then please [file an issue][issue] and provide _all_ the output from the commands you ran (even if it's a lot).
 
-## Learn More
+If you can't get the setup script to work, then just make sure you have the
+right versions of the requirements listed above, and run the following commands:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you are still unable to fix issues and you know how to use Docker 🐳 you can
+setup the project with the following command:
+
+```shell
+docker-compose up --detach --build
+```
+
+## Running the app
+
+**Set up the proper environment variables**
+```shell
+cp .env.example .env
+```
+
+```env
+NODE_ENV=development
+REACT_APP_STAGE=development
+```
+
+To get the app up and running (and really see if it worked), run:
+
+```shell
+npm run start
+```
+
+Verify the deployment by navigating to your server address in
+your preferred browser.
+
+```shell
+localhost:3000
+```
+
+You can also open [the deployment of the app on Vercel](https://moni.vercel.app).
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+   [React]: <https://reactjs.org>
+   [Chakra UI]: <https://chakra-ui.com>
+   [React Table]: <https://react-table.tanstack.com>
+   [Axios]: <https://axios-http.com>
+   [npm]: <https://www.npmjs.com/>
+   [node]: <https://nodejs.org>
+   [git]: <https://git-scm.com/>
+   [developer.spotify.com]: <https://developer.spotify.com/>
+   [win-path]: <https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/>
+   [mac-path]: <http://stackoverflow.com/a/24322978/971592>
+   [Spotify developer doc]: <https://developer.spotify.com/documentation/general/guides/authorization/app-settings/>
+   [issue]: <https://github.com/lucky401/moni/issues/new>
