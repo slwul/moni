@@ -1,4 +1,4 @@
-import {Suspense, lazy, useEffect} from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import {
   useLocation,
   useNavigate,
@@ -6,13 +6,14 @@ import {
   Route,
 } from 'react-router-dom';
 
-import {FullPageSpinner} from 'common/components';
+import { FullPageSpinner } from 'common/components';
 
 const LoginModule = lazy(() => import('./modules/login'));
 const MenuModule = lazy(() => import('./modules/menu'));
 const AnggotaModule = lazy(() => import('./modules/anggota'));
 const BankSampahModule = lazy(() => import('./modules/bankSampah'));
 const DashboardModule = lazy(() => import('./modules/dashboard'));
+const MapModule = lazy(() => import('./modules/maps'));
 const FullPageError = lazy(() => import('common/components/full-page-error'));
 
 function App(): JSX.Element {
@@ -32,6 +33,7 @@ function App(): JSX.Element {
         <Route path="/anggota/*" element={<AnggotaModule />} />
         <Route path="/bank-sampah/*" element={<BankSampahModule />} />
         <Route path="/dashboard/*" element={<DashboardModule />} />
+        <Route path="/maps/*" element={<MapModule />} />
         <Route
           path="*"
           element={<FullPageError message="Page not found" errorCode={404} />}
