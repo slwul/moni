@@ -205,7 +205,12 @@ function Anggota(): JSX.Element {
                         </Tbody>
                     </Table>
                 </TableContainer>
-                <Stack direction='row' spacing={4}>
+                <Stack 
+                    direction="row"
+                    spacing={4}
+                    align="center"
+                    justifyContent="center"
+                >
                     <IconButton aria-label='#' icon={<ChevronLeftIcon />} isDisabled />
                     <Button colorScheme='teal' variant='solid'>
                         1
